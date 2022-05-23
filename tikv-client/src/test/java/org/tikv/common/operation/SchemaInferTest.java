@@ -22,10 +22,10 @@ import static org.junit.Assert.assertEquals;
 import static org.tikv.common.expression.ArithmeticBinaryExpression.plus;
 
 import com.google.protobuf.ByteString;
-import com.pingcap.tikv.catalog.CatalogTransaction;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
+import org.tikv.common.catalog.CatalogTransaction;
 import org.tikv.common.expression.AggregateFunction;
 import org.tikv.common.expression.AggregateFunction.FunctionType;
 import org.tikv.common.expression.ByItem;

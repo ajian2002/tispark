@@ -23,7 +23,22 @@ import org.tikv.common.meta.Collation
 import java.util
 import org.tikv.common.meta.TiColumnInfo.InternalTypeHolder
 import org.tikv.common.types
-import org.tikv.common.types.{BitType, BytesType, DataType, DateTimeType, DateType, DecimalType, EnumType, IntegerType, JsonType, RealType, SetType, StringType, TimeType, TimestampType}
+import org.tikv.common.types.{
+  BitType,
+  BytesType,
+  DataType,
+  DateTimeType,
+  DateType,
+  DecimalType,
+  EnumType,
+  IntegerType,
+  JsonType,
+  RealType,
+  SetType,
+  StringType,
+  TimeType,
+  TimestampType
+}
 
 object DataType extends Enumeration {
   type ReflectedDataType = Value

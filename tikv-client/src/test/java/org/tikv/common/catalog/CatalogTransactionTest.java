@@ -20,13 +20,14 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 import org.junit.Test;
+import org.tikv.common.meta.MetaUtils;
 import org.tikv.common.meta.TiDBInfo;
 import org.tikv.common.meta.TiTableInfo;
 
 public class CatalogTransactionTest extends CatalogTest {
   @Test
   public void getLatestSchemaVersionTest() {
-    MetaMockHelper helper = new MetaMockHelper(pdServer, kvServer);
+    MetaUtils.MetaMockHelper helper = new MetaUtils.MetaMockHelper(pdServer, kvServer);
     helper.preparePDForRegionRead();
     helper.setSchemaVersion(666);
     CatalogTransaction trx = new CatalogTransaction(session.createSnapshot());
@@ -35,7 +36,7 @@ public class CatalogTransactionTest extends CatalogTest {
 
   @Test
   public void getDatabasesTest() {
-    MetaMockHelper helper = new MetaMockHelper(pdServer, kvServer);
+    MetaUtils.MetaMockHelper helper = new MetaUtils.MetaMockHelper(pdServer, kvServer);
     helper.preparePDForRegionRead();
     helper.addDatabase(130, "global_temp");
     helper.addDatabase(264, "TPCH_001");
@@ -56,7 +57,7 @@ public class CatalogTransactionTest extends CatalogTest {
 
   @Test
   public void getMultipleDatabasesTest() {
-    MetaMockHelper helper = new MetaMockHelper(pdServer, kvServer);
+    MetaUtils.MetaMockHelper helper = new MetaUtils.MetaMockHelper(pdServer, kvServer);
     helper.preparePDForRegionRead();
     helper.addDatabase(130, "global_temp");
     for (int i = 1; i <= 200; i++) {
@@ -86,7 +87,7 @@ public class CatalogTransactionTest extends CatalogTest {
 
   @Test
   public void getTablesTest() {
-    MetaMockHelper helper = new MetaMockHelper(pdServer, kvServer);
+    MetaUtils.MetaMockHelper helper = new MetaUtils.MetaMockHelper(pdServer, kvServer);
     helper.preparePDForRegionRead();
     helper.addTable(130, 42, "test");
     helper.addTable(130, 43, "test1");

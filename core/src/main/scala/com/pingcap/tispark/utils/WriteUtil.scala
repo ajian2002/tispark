@@ -21,7 +21,11 @@ import com.pingcap.tispark.write.{SerializableKey, WrappedEncodedRow, WrappedRow
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.tikv.common.codec.{CodecDataOutput, TableCodec}
-import org.tikv.common.exception.{ConvertOverflowException, TiBatchWriteException, TiDBConvertException}
+import org.tikv.common.exception.{
+  ConvertOverflowException,
+  TiBatchWriteException,
+  TiDBConvertException
+}
 import org.tikv.common.key.{CommonHandle, Handle, IndexKey, IntHandle, RowKey}
 import org.tikv.common.meta.{TiIndexColumn, TiIndexInfo, TiTableInfo}
 import org.tikv.common.row.ObjectRowImpl

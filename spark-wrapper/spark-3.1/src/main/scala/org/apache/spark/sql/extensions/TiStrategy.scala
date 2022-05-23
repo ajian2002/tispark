@@ -26,13 +26,32 @@ import com.pingcap.tispark.v2.TiDBTable
 import org.apache.spark.internal.Logging
 import org.apache.spark.sql._
 import org.apache.spark.sql.catalyst.expressions.aggregate._
-import org.apache.spark.sql.catalyst.expressions.{Alias, Ascending, Attribute, AttributeMap, AttributeSet, Descending, Expression, IntegerLiteral, IsNull, NamedExpression, NullsFirst, NullsLast, SortOrder, SubqueryExpression, TiExprUtils}
+import org.apache.spark.sql.catalyst.expressions.{
+  Alias,
+  Ascending,
+  Attribute,
+  AttributeMap,
+  AttributeSet,
+  Descending,
+  Expression,
+  IntegerLiteral,
+  IsNull,
+  NamedExpression,
+  NullsFirst,
+  NullsLast,
+  SortOrder,
+  SubqueryExpression,
+  TiExprUtils
+}
 import org.apache.spark.sql.catalyst.planner.TiAggregation
 import org.apache.spark.sql.catalyst.planning.PhysicalOperation
 import org.apache.spark.sql.catalyst.plans.logical
 import org.apache.spark.sql.catalyst.plans.logical._
 import org.apache.spark.sql.execution._
-import org.apache.spark.sql.execution.datasources.v2.{DataSourceV2Relation, DataSourceV2ScanRelation}
+import org.apache.spark.sql.execution.datasources.v2.{
+  DataSourceV2Relation,
+  DataSourceV2ScanRelation
+}
 import org.apache.spark.sql.internal.SQLConf
 import org.joda.time.{DateTime, DateTimeZone}
 import org.tikv.common.exception.IgnoreUnsupportedTypeException

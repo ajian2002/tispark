@@ -27,7 +27,13 @@ import org.tikv.common.{Snapshot, TiSession}
 import org.tikv.common.catalog.Catalog
 import org.tikv.common.meta.{TiColumnInfo, TiDAGRequest, TiIndexInfo, TiTableInfo}
 import org.tikv.common.row.Row
-import org.tikv.common.statistics.{CMSketch, ColumnStatistics, Histogram, IndexStatistics, TableStatistics}
+import org.tikv.common.statistics.{
+  CMSketch,
+  ColumnStatistics,
+  Histogram,
+  IndexStatistics,
+  TableStatistics
+}
 import org.tikv.common.types.DataType
 
 import scala.collection.JavaConversions._

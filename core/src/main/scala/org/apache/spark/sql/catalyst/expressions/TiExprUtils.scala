@@ -18,13 +18,21 @@
 
 package org.apache.spark.sql.catalyst.expressions
 
-import org.tikv.common.expression.visitor.{ColumnMatcher, MetaResolver, SupportedExpressionValidator}
+import org.tikv.common.expression.visitor.{
+  ColumnMatcher,
+  MetaResolver,
+  SupportedExpressionValidator
+}
 import org.tikv.common.region.RegionStoreClient.RequestTypes
 import com.pingcap.tispark.v2.TiDBTable
 import org.apache.spark.sql.catalyst.expressions.aggregate._
 import org.apache.spark.sql.execution.TiConverter.fromSparkType
 import org.tikv.common.expression
-import org.tikv.common.expression.visitor.{ColumnMatcher, MetaResolver, SupportedExpressionValidator}
+import org.tikv.common.expression.visitor.{
+  ColumnMatcher,
+  MetaResolver,
+  SupportedExpressionValidator
+}
 import org.tikv.common.expression.{AggregateFunction, ByItem, ColumnRef, ExpressionBlocklist}
 import org.tikv.common.meta.{TiColumnInfo, TiDAGRequest, TiTableInfo}
 import org.tikv.common.types.DataType

@@ -25,7 +25,23 @@ import com.pingcap.tispark.v2.TiDBTable
 import org.apache.spark.internal.Logging
 import org.apache.spark.sql._
 import org.apache.spark.sql.catalyst.expressions.aggregate._
-import org.apache.spark.sql.catalyst.expressions.{Alias, Ascending, Attribute, AttributeMap, AttributeSet, Descending, Expression, IntegerLiteral, IsNull, NamedExpression, NullsFirst, NullsLast, SortOrder, SubqueryExpression, TiExprUtils}
+import org.apache.spark.sql.catalyst.expressions.{
+  Alias,
+  Ascending,
+  Attribute,
+  AttributeMap,
+  AttributeSet,
+  Descending,
+  Expression,
+  IntegerLiteral,
+  IsNull,
+  NamedExpression,
+  NullsFirst,
+  NullsLast,
+  SortOrder,
+  SubqueryExpression,
+  TiExprUtils
+}
 import org.apache.spark.sql.catalyst.planner.TiAggregation
 import org.apache.spark.sql.catalyst.planning.PhysicalOperation
 import org.apache.spark.sql.catalyst.plans.logical

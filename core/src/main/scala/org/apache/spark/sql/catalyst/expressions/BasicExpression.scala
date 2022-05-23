@@ -31,7 +31,7 @@ object BasicExpression {
   type TiIsNull = org.tikv.common.expression.IsNull
 
   def convertLiteral(value: Any, dataType: DataType): Any =
-  // all types from literals are passed according to DataType's InternalType definition
+    // all types from literals are passed according to DataType's InternalType definition
     if (value == null || dataType == null) {
       null
     } else {

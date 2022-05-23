@@ -27,7 +27,14 @@ import org.apache.spark.sql.catalyst.expressions.BasicExpression.{
 }
 import org.apache.spark.sql.execution.TiConverter
 import org.apache.spark.sql.types.DecimalType
-import org.tikv.common.expression.{ArithmeticBinaryExpression, ColumnRef, ComparisonBinaryExpression, Constant, LogicalBinaryExpression, StringRegExpression}
+import org.tikv.common.expression.{
+  ArithmeticBinaryExpression,
+  ColumnRef,
+  ComparisonBinaryExpression,
+  Constant,
+  LogicalBinaryExpression,
+  StringRegExpression
+}
 
 object TiBasicExpression {
 
