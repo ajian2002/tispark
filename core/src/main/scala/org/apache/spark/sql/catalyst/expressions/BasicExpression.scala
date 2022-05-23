@@ -23,17 +23,15 @@ import org.tikv.common.region.RegionStoreClient.RequestTypes
 import com.pingcap.tispark.utils.{ReflectionUtil, TiUtil}
 import org.apache.spark.sql.types._
 import org.joda.time.DateTime
-import org.tikv.common.{expression, types}
-import org.tikv.common.expression.{IsNull, Not}
 
 object BasicExpression {
-  type TiDataType = types.DataType
-  type TiExpression = expression.Expression
-  type TiNot = Not
-  type TiIsNull = IsNull
+  type TiDataType = org.tikv.common.types.DataType
+  type TiExpression = org.tikv.common.expression.Expression
+  type TiNot = org.tikv.common.expression.Not
+  type TiIsNull = org.tikv.common.expression.IsNull
 
   def convertLiteral(value: Any, dataType: DataType): Any =
-    // all types from literals are passed according to DataType's InternalType definition
+  // all types from literals are passed according to DataType's InternalType definition
     if (value == null || dataType == null) {
       null
     } else {

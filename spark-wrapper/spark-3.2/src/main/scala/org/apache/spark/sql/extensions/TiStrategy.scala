@@ -17,7 +17,7 @@
 package org.apache.spark.sql.extensions
 
 import com.pingcap.tidb.tipb.EncodeType
-import com.pingcap.tikv.expression._
+import org.tikv.common.expression._
 import org.tikv.common.meta.TiDAGRequest.PushDownType
 import com.pingcap.tispark.TiConfigConst
 import com.pingcap.tispark.statistics.StatisticsManager
@@ -93,8 +93,8 @@ object TiStrategy {
 case class TiStrategy(getOrCreateTiContext: SparkSession => TiContext)(sparkSession: SparkSession)
     extends Strategy
     with Logging {
-  type TiExpression = expression.Expression
-  type TiColumnRef = ColumnRef
+  type TiExpression = org.tikv.common.expression.Expression
+  type TiColumnRef = org.tikv.common.expression.ColumnRef
   private lazy val tiContext: TiContext = getOrCreateTiContext(sparkSession)
   private lazy val sqlContext = tiContext.sqlContext
   private lazy val sqlConf: SQLConf = sqlContext.conf

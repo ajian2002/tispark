@@ -25,7 +25,7 @@ import scala.collection.mutable
 import scala.util.Random
 
 object DataGenerator {
-  type TiRow = Row
+  type TiRow = org.tikv.common.row.Row
 
   val bits = List(BIT)
   val booleans = List(BOOLEAN)
