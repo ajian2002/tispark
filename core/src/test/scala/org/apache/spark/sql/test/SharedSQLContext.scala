@@ -34,7 +34,7 @@ import org.joda.time.DateTimeZone
 import org.scalatest.concurrent.Eventually
 import org.slf4j.Logger
 import org.tikv.common.{StoreVersion, TiDBJDBCClient, Version, row}
-import org.tikv.row
+import org.tikv.common.row
 
 import scala.collection.mutable.ArrayBuffer
 
