@@ -21,7 +21,6 @@ package com.pingcap.tikv.operation;
 import static com.pingcap.tikv.util.BackOffFunction.BackOffFuncType.BoTxnLockFast;
 
 import com.pingcap.tikv.codec.KeyUtils;
-import com.pingcap.tikv.event.CacheInvalidateEvent;
 import com.pingcap.tikv.exception.GrpcException;
 import com.pingcap.tikv.exception.KeyException;
 import com.pingcap.tikv.region.RegionErrorReceiver;
@@ -37,6 +36,7 @@ import java.util.List;
 import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tikv.common.event.CacheInvalidateEvent;
 import org.tikv.common.region.TiRegion;
 import org.tikv.kvproto.Errorpb;
 import org.tikv.kvproto.Kvrpcpb;
@@ -116,7 +116,13 @@ public class KVErrorHandler<RespT> implements ErrorHandler<RespT> {
   private void notifyRegionStoreCacheInvalidate(
       TiRegion region, CacheInvalidateEvent.CacheType type) {
     if (cacheInvalidateCallBack != null) {
-      cacheInvalidateCallBack.apply(new CacheInvalidateEvent(region, true, true, type));
+      cacheInvalidateCallBack.apply(
+          new CacheInvalidateEvent(
+              recv.getRegion().getId(),
+              recv.getRegion().getLeader().getStoreId(),
+              true,
+              true,
+              type));
       logger.info(
           "Accumulating cache invalidation info to driver:regionId="
               + region.getId()
@@ -134,7 +140,11 @@ public class KVErrorHandler<RespT> implements ErrorHandler<RespT> {
     if (cacheInvalidateCallBack != null) {
       cacheInvalidateCallBack.apply(
           new CacheInvalidateEvent(
-              region, true, false, CacheInvalidateEvent.CacheType.REGION_STORE));
+              recv.getRegion().getId(),
+              recv.getRegion().getLeader().getStoreId(),
+              true,
+              false,
+              CacheInvalidateEvent.CacheType.REGION_STORE));
       logger.info(
           "Accumulating cache invalidation info to driver:regionId="
               + region.getId()

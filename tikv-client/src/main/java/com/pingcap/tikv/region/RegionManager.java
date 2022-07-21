@@ -19,10 +19,10 @@
 package com.pingcap.tikv.region;
 
 import com.pingcap.tikv.TiConfiguration;
-import com.pingcap.tikv.event.CacheInvalidateEvent;
 import com.pingcap.tikv.util.ConverterUpstream;
 import java.util.function.Function;
 import org.tikv.common.ReadOnlyPDClient;
+import org.tikv.common.event.CacheInvalidateEvent;
 
 @SuppressWarnings("UnstableApiUsage")
 public class RegionManager extends org.tikv.common.region.RegionManager {

@@ -19,7 +19,6 @@ package com.pingcap.tikv;
 import static com.pingcap.tikv.util.ClientUtils.groupKeysByRegion;
 
 import com.pingcap.tikv.catalog.Catalog;
-import com.pingcap.tikv.event.CacheInvalidateEvent;
 import com.pingcap.tikv.exception.TiKVException;
 import com.pingcap.tikv.key.Key;
 import com.pingcap.tikv.region.RegionManager;
@@ -42,6 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tikv.common.apiversion.RequestKeyCodec;
 import org.tikv.common.apiversion.RequestKeyV1TxnCodec;
+import org.tikv.common.event.CacheInvalidateEvent;
 import org.tikv.common.meta.TiTimestamp;
 import org.tikv.common.region.TiRegion;
 import org.tikv.common.region.TiStore;
